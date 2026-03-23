@@ -480,84 +480,84 @@ Follow-up ratio: 1.8× — acceptable. Note: Aircall reps have no duration logge
 <details>
 <summary>Outbound calls — past 30 days (76 calls: 43 answered, 16 voicemail, 14 no answer, 1 booked demo)</summary>
 
-| Date | Time | Outcome |
-|---|---|---|
-| 2026-03-16 | 19:58 | Voicemail |
-| 2026-03-13 | 19:02 | No answer |
-| 2026-03-12 | 18:24 | No answer |
-| 2026-03-10 | 19:08 | Answered |
-| 2026-03-10 | 19:02 | Voicemail |
-| 2026-03-10 | 18:15 | Answered |
-| 2026-03-10 | 18:13 | Voicemail |
-| 2026-03-10 | 18:09 | No answer |
-| 2026-03-10 | 18:07 | Answered |
-| 2026-03-10 | 18:03 | Answered |
-| 2026-03-10 | 18:02 | Answered |
-| 2026-03-10 | 18:00 | Answered |
-| 2026-03-10 | 17:54 | Answered |
-| 2026-03-10 | 17:26 | Answered |
-| 2026-03-10 | 16:29 | Answered |
-| 2026-03-10 | 16:24 | Answered |
-| 2026-03-10 | 16:22 | Answered |
-| 2026-03-10 | 16:19 | Answered |
-| 2026-03-10 | 16:17 | Answered |
-| 2026-03-10 | 16:15 | Voicemail |
-| 2026-03-10 | 15:57 | Answered |
-| 2026-03-10 | 15:54 | Answered |
-| 2026-03-10 | 15:46 | No answer |
-| 2026-03-10 | 15:43 | Voicemail |
-| 2026-03-09 | 18:31 | No answer |
-| 2026-03-09 | 18:27 | Answered |
-| 2026-03-09 | 18:23 | Answered |
-| 2026-03-09 | 18:05 | Answered |
-| 2026-03-09 | 18:00 | Voicemail |
-| 2026-03-09 | 17:58 | Answered |
-| 2026-03-09 | 17:54 | Voicemail |
-| 2026-03-09 | 17:52 | No answer |
-| 2026-03-09 | 17:50 | No answer |
-| 2026-03-09 | 17:47 | No answer |
-| 2026-03-09 | 17:44 | Voicemail |
-| 2026-03-09 | 17:35 | No answer |
-| 2026-03-06 | 19:50 | Answered |
-| 2026-03-04 | 17:45 | Answered |
-| 2026-03-04 | 17:28 | Answered |
-| 2026-03-04 | 17:16 | Voicemail |
-| 2026-03-04 | 17:15 | Voicemail |
-| 2026-03-04 | 17:09 | Answered |
-| 2026-03-04 | 17:04 | Answered |
-| 2026-03-04 | 16:58 | Answered |
-| 2026-03-02 | 20:37 | Answered |
-| 2026-03-02 | 20:35 | Answered |
-| 2026-03-02 | 20:27 | Answered |
-| 2026-03-02 | 20:22 | Answered |
-| 2026-03-02 | 20:19 | Voicemail |
-| 2026-03-02 | 20:18 | Answered |
-| 2026-03-02 | 20:12 | Answered |
-| 2026-03-02 | 20:09 | No answer |
-| 2026-03-02 | 20:07 | Answered |
-| 2026-03-02 | 20:04 | Answered |
-| 2026-03-02 | 20:01 | Answered |
-| 2026-03-02 | 20:00 | Voicemail |
-| 2026-03-02 | 19:57 | Voicemail |
-| 2026-03-02 | 19:54 | Voicemail |
-| 2026-03-02 | 19:52 | Answered |
-| 2026-03-02 | 19:49 | Answered |
-| 2026-03-02 | 19:46 | No answer |
-| 2026-03-02 | 19:43 | Answered |
-| 2026-03-02 | 19:40 | Voicemail |
-| 2026-03-02 | 19:38 | Answered |
-| 2026-03-02 | 19:35 | Answered |
-| 2026-03-02 | 19:32 | Answered |
-| 2026-03-02 | 19:28 | No answer |
-| 2026-03-02 | 19:26 | Voicemail |
-| 2026-03-02 | 19:23 | Answered |
-| 2026-03-02 | 19:18 | Answered |
-| 2026-03-02 | 19:13 | Booked Demo |
-| 2026-03-02 | 19:11 | Answered |
-| 2026-03-02 | 19:08 | Answered |
-| 2026-03-02 | 19:04 | No answer |
-| 2026-03-02 | 19:02 | No answer |
-| 2026-03-02 | 18:56 | Answered |
+| Date | Time | Type | Outcome | Record |
+|---|---|---|---|---|
+| 2026-03-16 | 19:58 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106473284787) |
+| 2026-03-13 | 19:02 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106343378505) |
+| 2026-03-12 | 18:24 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106275310258) |
+| 2026-03-10 | 19:08 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106147152940) |
+| 2026-03-10 | 19:02 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106147091269) |
+| 2026-03-10 | 18:15 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106147027975) |
+| 2026-03-10 | 18:13 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106146745996) |
+| 2026-03-10 | 18:09 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106145856365) |
+| 2026-03-10 | 18:07 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106146908337) |
+| 2026-03-10 | 18:03 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106146792229) |
+| 2026-03-10 | 18:02 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106147012724) |
+| 2026-03-10 | 18:00 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106146957061) |
+| 2026-03-10 | 17:54 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106145081916) |
+| 2026-03-10 | 17:26 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106145756493) |
+| 2026-03-10 | 16:29 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106144620705) |
+| 2026-03-10 | 16:24 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106144647506) |
+| 2026-03-10 | 16:22 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106105513620) |
+| 2026-03-10 | 16:19 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106144529190) |
+| 2026-03-10 | 16:17 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106116228709) |
+| 2026-03-10 | 16:15 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106116059823) |
+| 2026-03-10 | 15:57 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106116301974) |
+| 2026-03-10 | 15:54 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106116133522) |
+| 2026-03-10 | 15:46 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106105231393) |
+| 2026-03-10 | 15:43 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106105397596) |
+| 2026-03-09 | 18:31 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106056051063) |
+| 2026-03-09 | 18:27 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106060758571) |
+| 2026-03-09 | 18:23 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106056041289) |
+| 2026-03-09 | 18:05 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106060639786) |
+| 2026-03-09 | 18:00 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106060551792) |
+| 2026-03-09 | 17:58 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106060598025) |
+| 2026-03-09 | 17:54 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106055542711) |
+| 2026-03-09 | 17:52 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106060424316) |
+| 2026-03-09 | 17:50 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106055537469) |
+| 2026-03-09 | 17:47 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106055533961) |
+| 2026-03-09 | 17:44 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106055596600) |
+| 2026-03-09 | 17:35 | Call - Outbound | No answer | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/106055585386) |
+| 2026-03-06 | 19:50 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105952933542) |
+| 2026-03-04 | 17:45 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105716811586) |
+| 2026-03-04 | 17:28 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105716665195) |
+| 2026-03-04 | 17:16 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105716551770) |
+| 2026-03-04 | 17:15 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105716524557) |
+| 2026-03-04 | 17:09 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105710374492) |
+| 2026-03-04 | 17:04 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105710368524) |
+| 2026-03-04 | 16:58 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105716493418) |
+| 2026-03-02 | 20:37 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105543432090) |
+| 2026-03-02 | 20:35 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105543043664) |
+| 2026-03-02 | 20:27 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105543420287) |
+| 2026-03-02 | 20:22 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105542873998) |
+| 2026-03-02 | 20:19 | Call - Outbound | Voicemail | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105543387549) |
+| 2026-03-02 | 20:18 | Call - Outbound | Answered | [View ↗](https://app.hubspot.com/contacts/5923252/record/0-48/105543230724) |
+| 2026-03-02 | 20:12 | Call - Outbound | Answered | — |
+| 2026-03-02 | 20:09 | Call - Outbound | No answer | — |
+| 2026-03-02 | 20:07 | Call - Outbound | Answered | — |
+| 2026-03-02 | 20:04 | Call - Outbound | Answered | — |
+| 2026-03-02 | 20:01 | Call - Outbound | Answered | — |
+| 2026-03-02 | 20:00 | Call - Outbound | Voicemail | — |
+| 2026-03-02 | 19:57 | Call - Outbound | Voicemail | — |
+| 2026-03-02 | 19:54 | Call - Outbound | Voicemail | — |
+| 2026-03-02 | 19:52 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:49 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:46 | Call - Outbound | No answer | — |
+| 2026-03-02 | 19:43 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:40 | Call - Outbound | Voicemail | — |
+| 2026-03-02 | 19:38 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:35 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:32 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:28 | Call - Outbound | No answer | — |
+| 2026-03-02 | 19:26 | Call - Outbound | Voicemail | — |
+| 2026-03-02 | 19:23 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:18 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:13 | Call - Outbound | Booked Demo | — |
+| 2026-03-02 | 19:11 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:08 | Call - Outbound | Answered | — |
+| 2026-03-02 | 19:04 | Call - Outbound | No answer | — |
+| 2026-03-02 | 19:02 | Call - Outbound | No answer | — |
+| 2026-03-02 | 18:56 | Call - Outbound | Answered | — |
 
 </details>
 
