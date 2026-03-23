@@ -53,10 +53,25 @@ Update this file when the Motion property goes live.
 
 #### 1. Outbound Calls
 **Object:** calls
-**Filter:** hs_activity_type = "Call - Outbound"
+**Filter:** hs_activity_type = "Call - Outbound" AND hubspot_owner_id = [AE owner ID]
+**Exclude:** hubspot_owner_id = 83701758 (Poret Kyesmu — inactive, same exclusion as HubSpot native report)
 **2026 YTD volume (as of 2026-03-23):** 3,836
 
-This is the outbound prospecting motion. Do not use hs_call_direction.
+Use hubspot_owner_id, NOT hs_created_by_user_id. Reason:
+- Some reps (Sofia, Sam, Jessica) use Aircall. Aircall creates calls via an integration user
+  and assigns them to the rep via hubspot_owner_id. Their calls never appear under their own
+  HubSpot user account as creator.
+- Reps on HubSpot native dialer (Kirsty, Don Patrick) create calls as themselves.
+- hs_created_by_user_id misses all Aircall calls and undercounts for ~50% of the team.
+- hubspot_owner_id captures all calls regardless of dialer tool.
+
+HubSpot native "core report" uses hs_created_by_user_id ≠ Poret Kyesmu — this is incomplete
+for Aircall reps. Do not use it as the source of truth.
+
+Known Aircall integration user IDs (for reference — do not filter on these):
+- 68905127 → Sofia Bonicelli's Aircall
+- 26542395 → Sam Kaplan's Aircall
+- 49256477 → Jessica Civitella's Aircall
 
 **Call outcome (hs_call_disposition):**
 | Value | Label |
@@ -126,6 +141,7 @@ may indicate deals are stalling. Flag per AE if disproportionate.
 **Filter:** hs_activity_type = "Meeting/Call - Upsell"
 **2026 YTD volume:** 140
 Tracked separately. Not mixed into NB funnel.
+Note: type is "Meeting/Call" — we do not know if all are calls. Report count as-is, do not reclassify.
 
 #### Enterprise Demos
 **Object:** meetings
