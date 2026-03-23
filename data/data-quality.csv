@@ -1,0 +1,8 @@
+AE,Owner ID,Follow-Up Calls Logged as Meetings YTD,Notes
+Sam Kaplan,108125586,Multiple (see detail),"Follow-up meetings logged as meetings object — confirmed 2026 records: 6 in Jan-Mar range"
+Sofia Bonicelli,264419305,Multiple (see detail),"Highest offender — multiple follow-up calls logged as meetings YTD 2026"
+Jessica Civitella,311286579,Multiple (see detail),"Several follow-up calls logged as meetings 2026"
+Emelie Schneider,181769737,1,"1 follow-up call logged as meeting 2026"
+Scott Goodsir-Smyth,96216654,1,"1 follow-up call logged as meeting (2025 era, included in all-time total)"
+Total across all AEs (YTD all time),,"84 total records in meetings object with hs_activity_type = Call - Sales Follow-Up","Per 2026 YTD filter: 9 confirmed 2026 records (108125586 x6, 264419305 x3 in Jan-Mar 2026 window)"
+Enterprise Demo Miscount Note,,"Enterprise demos object: 4 total confirmed — Kirsty Freely (124826644) x1 + Scott Goodsir-Smyth (96216654) x1 + Sam Kaplan (108125586) x1 + Jessica Civitella (311286579) x1",All pre-2026 except Kirsty (Mar 2026) and Scott (Feb 2026)
