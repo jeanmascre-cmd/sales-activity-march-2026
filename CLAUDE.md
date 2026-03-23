@@ -150,9 +150,24 @@ Query meetings object where hs_activity_type = "Call - Sales Follow-Up".
 ## AE Attribution
 Use hubspot_owner_id on each activity object.
 This is the rep the activity is assigned to.
-Populate the AE list dynamically on first run by querying all distinct hubspot_owner_id
-values found across calls, meetings, and emails for the analysis period.
-Do not hardcode a list.
+
+### Active AEs (SME sales team — confirmed 2026-03-23)
+| Owner ID | Name | Status |
+|---|---|---|
+| 311286579 | Jessica Civitella | Active |
+| 108125586 | Sam Kaplan | Active |
+| 83717736 | Don Patrick Jakobsen | Active |
+| 264419305 | Sofia Bonicelli | Active |
+| 124826644 | Kirsty Freely | Active |
+| 82586810 | Alexandra Dias | Active |
+| 156289960 | Carlos Archanco | Active |
+| 85529907 | Michelle Frank | Active |
+| 181769737 | Emelie Schneider | Active |
+| 37634691 | Juha Huttunen | Active |
+| 96216654 | Scott Goodsir-Smyth | Active |
+| 140964498 | Kristyna Safrova | **INACTIVE — exclude from team metrics** |
+
+Refresh this list at the start of each run to catch new hires or departures.
 
 ---
 
@@ -191,6 +206,28 @@ One toggle per AE with full activity detail. Same structure as pipeline project.
   https://www.notion.so/nordhealth/Claude-Code-Automations-Company-Catalogue-32757ba3e0ba817eb3fcc889c6634a3d
   New row in catalogue table + new linked Notion page with analysis.
 - Slack: #rev_ops — summary alert on completion (same format as pipeline)
+
+---
+
+## Known Data Quality Issues (from first run 2026-03-23)
+
+**Kristyna Safrova (140964498) — INACTIVE:**
+All 509 outbound calls and 2,984 follow-up calls appear within the Mar 17+ window for an
+inactive rep. Likely a bulk re-attribution or data migration event. Always exclude from
+team metrics. HubSpot audit required on this owner ID.
+
+**Calls logged as meetings — 2026 YTD:**
+- Sam Kaplan: 6 follow-up calls logged on meetings object
+- Sofia Bonicelli: 3 follow-up calls logged on meetings object
+These should be on the calls object. Flag to the reps each run.
+
+**Carlos Archanco no-show rate:**
+67% no-show rate (163/244 demos) as of 2026-03-23. This is a known anomaly.
+Track this metric every run — if it persists, escalate.
+
+**Several AEs show zero Jan/Feb activity:**
+Don Patrick Jakobsen, Alexandra Dias, Jessica Civitella — confirm start dates before
+interpreting Jan/Feb zeros as underperformance.
 
 ---
 
