@@ -3,6 +3,12 @@ Date: 2026-03-23 | Audience: CFO, CEO, VP Sales | Source: HubSpot MCP live pull
 
 ---
 
+> ⚠️ **Admin Actions Required Before Next Run**
+> **1. Create `motion` property on deals** — values: New Business / Upsell. Currently using `dealtype` as proxy. Update CLAUDE.md and analysis scripts on activation.
+> **2. Create `Call - Inbound NB` activity type** — 120 follow-up calls confirmed INBOUND direction YTD. Brief all AEs on activation.
+
+---
+
 ## TLDR — What the data says
 
 - **Michelle Frank: zero outbound calls, zero upsell activity, 144 emails — all in March.** No prospecting motion visible on any metric. Needs immediate 1:1.
@@ -205,6 +211,240 @@ Sofia Bonicelli (52 YTD), Carlos Archanco (14). Should not be in use. Migrate to
 **Kristyna Safrova (INACTIVE) — 509 outbound + 2,984 follow-up calls all in Mar 17+ window.** Audit HubSpot for bulk activity on owner 140964498 after Mar 17.
 
 **Email data discrepancy — Emelie Schneider and Juha Huttunen:** Monthly query returns much lower figures than the YTD total from the original analysis. Likely a sequence email metadata issue. Flag for investigation.
+
+---
+
+---
+
+## Call Source & Tool Split
+
+Not all calls are equal in data richness. Three distinct recording sources exist across the team:
+
+| Source | Reps | What it covers | Recording / Content |
+|---|---|---|---|
+| **Gong** | All AEs | Demos, discovery, upsell meetings | ✅ Full AI summary + key points pushed to HubSpot notes |
+| **Aircall** | Sofia, Sam, Jessica | Outbound prospecting — short, high volume | ✅ Recording URL; transcription depends on plan tier |
+| **HubSpot native dialer** | Kirsty, Don Patrick (primary) | Outbound prospecting | ✅ Recording URL stored in HubSpot |
+| **Manually logged** | All AEs | Calls from mobile, landline, non-dialer scenarios | ❌ No recording — content is freetext notes only |
+
+**Gong note volume per AE (YTD 2026 — 2,163 notes total):**
+
+| AE | Gong Notes | Level |
+|---|---|---|
+| Kirsty Freely | 283 | Heavy |
+| Carlos Archanco | 276 | Heavy |
+| Jessica Civitella | 240 | Heavy |
+| Sofia Bonicelli | 219 | Heavy |
+| Sam Kaplan | 197 | Heavy |
+| Juha Huttunen | 113 | Moderate |
+| Scott Goodsir-Smyth | 105 | Moderate |
+| Emelie Schneider | 86 | Moderate |
+| Michelle Frank | 23 | Low |
+| Alexandra Dias | 7 | Very low / new |
+| Don Patrick Jakobsen | 4 | Almost none |
+
+> Gong note counts include all call types where Gong was active — demos, upsell calls, implementation handovers, any recorded Google Meet. The owner on the note is the AE assigned to the associated contact/deal, not necessarily the call host.
+
+**Aircall call volume by integration user (YTD 2026, all call types):**
+
+| AE | Aircall Integration User ID | YTD Calls via Aircall |
+|---|---|---|
+| Sofia Bonicelli | 68905127 | 1,113 |
+| Sam Kaplan | 26542395 | 1,531 |
+| Jessica Civitella | 49256477 | 1,025 |
+
+> For YTD outbound calls specifically (Sofia: 274, Sam: 118, Jessica: 89) refer to the Outbound Calls section. The proportion of manually logged calls (no recording URL) across the team has not been fully quantified — recommended as a next analytical step.
+
+---
+
+## Call Direction Analysis
+
+`hs_call_direction` (INBOUND / OUTBOUND) is set by the dialer or manually by the rep. It is distinct from `hs_activity_type` and must **not** be used as the primary filter for the outbound motion — see Call Methodology Note.
+
+**Active AEs — YTD 2026:**
+
+| Direction | Count |
+|---|---|
+| INBOUND | 266 |
+| No direction set | Significant — many manually logged calls carry no direction |
+
+**What stands out:**
+
+🔴 **71 `Call - Outbound` type calls carry INBOUND direction** — data quality flag. A call typed as `Call - Outbound` with `hs_call_direction = INBOUND` is a contradiction. Either the rep logged an inbound callback under the wrong activity type, or Aircall auto-sets direction incorrectly. Affected AEs: Jessica Civitella, Sam Kaplan, Alexandra Dias, Don Patrick Jakobsen, Sofia Bonicelli, Kirsty Freely, Emelie Schneider. Investigate whether this is Aircall configuration or rep logging behaviour.
+
+🟡 **120 `Call - Sales Follow-Up` calls carry INBOUND direction** — validates the methodology note. Of 7,514 follow-up calls YTD, at least 120 are explicitly logged as inbound. The true figure is higher — many more inbound callbacks have no direction set. This is the quantified evidence for creating `Call - Inbound NB`: once live, follow-up ratios will be more accurate and inbound demand will be visible.
+
+🟢 **`Meeting/Call - Upsell` with INBOUND direction** — expected. Customers initiating contact for upsell conversations. Validates that the upsell motion is partly inbound-driven.
+
+> **Conclusion:** `hs_call_direction` has signal as a cross-check but limited reliability as a standalone metric. Recommend adding as a secondary column in future exports, not as a primary filter.
+
+---
+
+## Sentiment Analysis — Gong Notes
+
+**Methodology:** Gong pushes AI-generated call summaries to HubSpot as notes on associated contacts and meetings. Each note contains a call brief, 10 key discussion points, and next steps. Sentiment is derived from these summaries — classified as Positive / Mixed / Cautious / Negative based on customer engagement, objection intensity, buying signals, and outcome direction. This is qualitative, not a quantitative score. Sentiment reflects **customer tone**, not rep performance.
+
+**Source:** 68 Gong note summaries, March 2026. Gong covers demos, discovery, and upsell calls — not Aircall outbound prospecting. The picture below reflects mid- and late-funnel conversations, not cold outreach.
+
+**Team Overview:**
+
+| Sentiment | Est. Count | Est. % |
+|---|---|---|
+| ✅ Positive — customer engaged, moving forward | ~40 | ~59% |
+| 🟡 Mixed — interest plus objections, uncertain outcome | ~19 | ~28% |
+| 🔴 Cautious / Resistant — hesitation, unresolved concerns | ~7 | ~10% |
+| 🔴 Negative — active resistance or frustrated customer | ~2 | ~3% |
+
+> Team read: the majority of recorded calls are progressing positively. ~13% cautious or resistant — concentrated in the German market (cloud migration resistance) and large-account renewal/pricing conversations.
+
+**All AEs Summary:**
+
+| AE | Notes | Sentiment | Key Themes |
+|---|---|---|---|
+| Kirsty Freely | 14 | ✅ Positive | CMA compliance, Provet Pay, AI features, upsell. Customers asking "how do I use this better?" — not whether to stay. |
+| Carlos Archanco | 14 | 🟡 Positive/Mixed | Spain/LATAM demos. Strong deal progression, proposals sent. Some cost and migration complexity concerns. |
+| Jessica Civitella | 12 | 🟡 Positive/Mixed | US market. Good demo engagement. One frustrated existing customer on reporting limitations (product issue, not sales). |
+| Sofia Bonicelli | 7 | ✅ Positive | UK demos. All sampled calls are prospects actively evaluating Provet as PMS replacement. AI features landing well. |
+| Sam Kaplan | 6 | ✅ Positive | US market. TAGS Vet Clinic in implementation. Prospects technically engaged, asking detailed questions. |
+| Michelle Frank | 6 | 🔴 Mixed/Cautious | German market. Cloud migration resistance dominant — customers resistant even with better pricing and AI. |
+| Juha Huttunen | 5 | 🟡 Mixed | Positive ProvetPay and AI upsell conversations. One frustrated implementation call (VHB Veterinaria). |
+| Scott Goodsir-Smyth | 2 | 🔴 Mixed/Cautious | Large-account renewals under pricing pressure. Not representative of NB sentiment. |
+| Emelie Schneider | 1 | ✅ Positive | Single note: Väla Veterinär demo — strong engagement, moving to implementation. Insufficient data. |
+| Don Patrick Jakobsen | 1 | ✅ Positive | Single note: Minde dyreklinikk AI demo — customer engaged, good questions. Insufficient data. |
+| Alexandra Dias | 0 | — | No notes in recent sample. 7 notes YTD but none in analysed period. |
+
+---
+
+### Sentiment — Per AE Detail
+
+<details>
+<summary>Kirsty Freely — ✅ Positive (14 notes)</summary>
+
+**Pattern:** Strong mix of upsell calls with existing customers and new demos. Customers are solution-oriented — conversations are about optimising usage or expanding, not whether to stay on Provet. CMA compliance is a consistent and effective hook.
+
+**Sample calls:**
+- **VetShack (72 min):** Customer acknowledged underutilisation. Kirsty introduced new UK CS Manager and mapped quick wins. Customer committed to next steps. ✅
+- **Altano UK (66 min):** Exploring Provet for UK equine clinics post-group acquisition. Strong evaluative engagement. ✅
+- **Scope Farm Vets (19 min):** New environment setup after practice acquisition — operational, straightforward. ✅
+
+**Key themes:** CMA requirements, Provet Pay cost savings, AI scribe, online booking, CS support structure.
+
+</details>
+
+<details>
+<summary>Carlos Archanco — 🟡 Positive/Mixed (14 notes)</summary>
+
+**Pattern:** High-volume demo activity across Spain and LATAM. Strong deal progression — multiple calls end with proposals sent and contracts referenced. Mixed signal comes from cost sensitivity and data migration complexity in some accounts where the decision-maker is not on the call.
+
+**Sample calls:**
+- **Clínica Veterinària Pel i Plomes (15 min):** Second demo, competitive comparison vs Winnet. Customer leaning toward Provet. ✅
+- **Castell Medicina Veterinaria (59 min):** Full system walkthrough, proposal sent to decision-maker. ✅
+- **Grupo Veterinario Vetcare Puerto Vallarta (40 min):** Multi-centre proposal ($452/month + $3,280 onboarding). Decision deferred to absent decision-maker. 🟡
+
+**Key themes:** Inventory management, hospitalisation module, multi-centre management, data migration, AI scribe.
+
+</details>
+
+<details>
+<summary>Jessica Civitella — 🟡 Positive/Mixed (12 notes)</summary>
+
+**Pattern:** US market. Mix of new demos with engaged prospects and existing customer support/feedback calls. The negative signal is a product issue (reporting limitations) not a sales issue — escalated appropriately to the product team.
+
+**Sample calls:**
+- **Cement Creek Veterinary Hospital (54 min):** Multi-stakeholder demo on medical records, lab integrations, task management. Engaged and detailed. ✅
+- **King's Ridge Veterinary Clinic (13 min):** Customer ready to switch to Provet Pay on go-live. ✅
+- **Veterinary Diagnostic Centers (17 min, with product team):** Customer frustrated with inconsistent referral reports. Escalated. 🔴
+
+**Key themes:** Provet Pay, lab integrations, reporting limitations, medical record export.
+
+</details>
+
+<details>
+<summary>Sofia Bonicelli — ✅ Positive (7 notes)</summary>
+
+**Pattern:** UK new business demos with strong forward momentum. AI features consistently landing as a key differentiator. All sampled calls are prospects evaluating Provet as a PMS replacement — high-intent conversations.
+
+**Sample calls:**
+- **Point of Care Mobile Vets (31 min):** AI features demo. Customer enthusiastic about AI scribe for mobile workflow. Follow-up meeting booked. ✅
+- **Bishopton Veterinary Group (74 min):** Prospect researching consolidated PMS with CMA compliance and AI notes. Strong buying signals. ✅
+- **Drove Vets (62 min):** Potential RoboVet replacement. Customer comparing options, engaged on Xero + lab integrations. ✅
+
+**Key themes:** AI scribe, CMA compliance, Xero integration, lab integrations, online booking, RoboVet replacement.
+
+</details>
+
+<details>
+<summary>Sam Kaplan — ✅ Positive (6 notes)</summary>
+
+**Pattern:** US market. Most advanced pipeline in the sample — TAGS Vet Clinic is in implementation. New demo prospects are technically engaged and asking detailed, informed questions.
+
+**Sample calls:**
+- **TAGS Vet Clinic — Implementation Handover (32 min):** Customer committed, targeting May go-live. ✅
+- **veterinaryunited.com (64 min):** Multi-location group. Detailed discussion on user permissions and data migration. ✅
+- **Feline Fix (40 min):** Demo on online booking, client communication, inventory. Good engagement. ✅
+
+**Key themes:** Data migration, user permissions, Provet Pay, go-live planning, multi-location management.
+
+</details>
+
+<details>
+<summary>Michelle Frank — 🔴 Mixed/Cautious (6 notes)</summary>
+
+**Pattern:** German market only. Recurring and significant theme: **cloud migration resistance**. Even when Provet offers better pricing and AI features, customers hesitate to leave on-premise systems. This is a market-specific dynamic.
+
+**Important context:** Michelle has 0 outbound calls YTD but 23 Gong notes, showing she IS conducting demos. Her activity is weighted toward longer consultative conversations with customers who are slow to commit. The zero-outbound flag remains valid (no prospecting motion), but her pipeline activity is not zero.
+
+**Sample calls:**
+- **Kleintierpraxis Lüttringhausen (29 min):** Customer interested in AI integration but cautious about migration complexity. 🟡
+- **Tierarztpraxis Unterschleißheim (20 min):** Customer resistant despite better pricing and AI features — *trotz günstigerer Konditionen*. 🔴
+- **Tierarztpraxis Johannes Schwarz (25 min):** Concerns about cloud hosting, data control, cost. Testing but unresolved. 🟡
+
+**Key themes:** Cloud migration resistance, data security, on-premise vs cloud, cost comparison, AI scribe.
+
+</details>
+
+<details>
+<summary>Juha Huttunen — 🟡 Mixed (5 notes)</summary>
+
+**Sample calls:**
+- **VHB Veterinaria — Implementation Update (42 min):** Customer frustrated with resource allocation and training costs. Provet committed to addressing. Requires follow-up. 🔴
+- **Kanta-Häme — ProvetPay (20 min):** Customer interested in payment integration. Positive, forward-moving. ✅
+- **SLU — Technical Issues (24 min):** DICOM file integration with PACS portal not working, invoice discrepancy raised. 🟡
+
+**Key themes:** Implementation delivery, ProvetPay adoption, DICOM/PACS integration, billing discrepancies.
+
+</details>
+
+<details>
+<summary>Scott Goodsir-Smyth — 🔴 Mixed/Cautious (2 notes)</summary>
+
+**Pattern:** Both sampled calls are large-account contract renewals and MSA negotiations — not typical NB demos. Sentiment cautious to resistant, driven by pricing increases. Not representative of NB pipeline sentiment.
+
+**Sample calls:**
+- **Merged — Contract Renewal (19 min):** Price increase proposed. Customer resistant. Outcome deferred. 🔴
+- **Linnaeus MSA / Anicura Group Sweden (46 min):** New licensing model. Concerns about value clarity and pricing complexity. 🟡
+
+**Key themes:** Contract renewal, price increases, MSA licensing, enterprise pricing.
+
+</details>
+
+<details>
+<summary>Emelie Schneider — ✅ Positive (1 note — insufficient data)</summary>
+
+- **Väla Veterinär / Dogman chain (72 min):** Comprehensive implementation/demo. Customer engaged on scheduling, online booking, financial setup, lab integrations, AI features. Moving to implementation. ✅
+
+Expand sample before drawing conclusions.
+
+</details>
+
+<details>
+<summary>Don Patrick Jakobsen — ✅ Positive (1 note — insufficient data)</summary>
+
+- **Minde dyreklinikk — AI Features Demo (32 min):** Customer asking good questions about AI scribe, privacy, and pricing. Follow-up with formal offer promised. ✅
+
+Expand sample before drawing conclusions.
+
+</details>
 
 ---
 
