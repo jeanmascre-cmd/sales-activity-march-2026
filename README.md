@@ -43,7 +43,8 @@ Output: Notion page + Slack summary to #rev_ops
 | `data/by-ae-demos.csv` | DS, DD, no-show, cancel per AE × period |
 | `data/by-ae-emails.csv` | Emails sent per AE YTD |
 | `data/data-quality.csv` | Mislogged activities per AE |
-| `output/sales-activity-march-2026.md` | Full analysis report — 2026-03-23 |
+| `output/sales-activity-march-2026.md` | Full SME analysis report — 2026-03-23 |
+| `output/enterprise-activity-march-2026.md` | Enterprise analysis report (corporate_deal = true) — 2026-03-24 |
 | `scripts/` | Automation scripts (to be added) |
 | `.github/workflows/` | GitHub Actions scheduler (to be added) |
 
