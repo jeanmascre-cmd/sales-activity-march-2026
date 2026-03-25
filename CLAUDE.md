@@ -73,6 +73,16 @@ Known Aircall integration user IDs (for reference — do not filter on these):
 - 26542395 → Sam Kaplan's Aircall
 - 49256477 → Jessica Civitella's Aircall
 
+**Aircall property behaviour — verified 2026-03-25 (sample of 10 records per rep):**
+- hs_activity_type IS populated by Aircall and varies meaningfully (Call - Outbound, Call - Sales
+  Follow-Up, Meeting/Call - Upsell). Reps select the type in Aircall and it syncs correctly.
+  → Use hs_activity_type = "Call - Outbound" for all reps, Aircall and native alike. Same filter.
+- hs_call_direction IS mostly populated by Aircall, but always as OUTBOUND (or null for Sofia on
+  one record). No INBOUND direction observed in any Aircall record.
+  → Aircall does NOT reliably set hs_call_direction = INBOUND when a prospect calls in.
+  → Layer 1 inbound NB estimate (hs_call_direction = INBOUND) will undercount Sofia, Sam, Jessica.
+  → Do not use hs_call_direction alone for any count. hs_activity_type is the reliable signal.
+
 **Call outcome (hs_call_disposition):**
 | Value | Label |
 |---|---|
